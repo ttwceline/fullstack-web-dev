@@ -1,0 +1,120 @@
+/* index.css */
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(245, 153, 219, 0.87);
+  background-color: #969ddd;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #a3a6e5;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  background-color: lightblue;
+  display: block; 
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #ebb9f9;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #d8ff64;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ff6aaf;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #fcadbc;
+  }
+}
+
+/* --- CUSTOM STYLES FOR ALIGNMENT AND LISTS --- */
+
+/* 1. Navigation Bar Alignment (Top-Left) */
+.main-nav {
+  text-align: left;
+  margin-bottom: 20px; 
+}
+
+/* 2. Header Alignment (Top-Left) */
+.app-title {
+  text-align: left; 
+  margin-top: 0.5em; 
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* 3. Centering the Form (Textbox and Button) */
+.task-form {
+  display: flex; /* Use Flexbox */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; 
+  width: 100%;
+  margin-top: 20px; 
+}
+
+/* 4. Centering "No tasks yet" message */
+.no-tasks-message {
+  text-align: center; 
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* 5. Task List Styling (removes bullet points, centers list items) */
+.task-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; /* Centers the whole list of items */
+}
+
+/* Optional: Centers the content within each list item */
+.task-list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+}
