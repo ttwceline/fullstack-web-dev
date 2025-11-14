@@ -1,0 +1,212 @@
+/* FULL-HEIGHT FIX: Added 'html' selector to ensure the root element 
+  takes up the entire viewport height before 'body' can stretch.
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- FIX FOR FULL SCREEN BACKGROUND --- */
+html {
+  height: 100%;
+}
+/* -------------------------------------- */
+
+body {
+  background-image: linear-gradient(120deg,#f6d365 0%,#fda085 100%, #f6d365 0%);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh; /* Ensures body is at least as tall as the viewport */
+}
+
+header{
+  font-size: 2rem;
+}
+header,
+form{
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Corrected selector from 'from input' to 'form input' */
+form input,
+form button{
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  background: white;
+}
+form button{
+  background: #6a11cb;
+  background: linear-gradient(120deg,#2575fc 0%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover{
+  background: #6a11cb;
+  background: linear-gradient(-120deg,#2575fc 0%);
+  color: white;
+
+}
+.todo-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+}
+.todo-list{
+  min-width: 30%;
+  list-style: none ;
+}
+.todo{
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;     
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+.filter-todo{
+  background: white;
+  color: black;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.complete-btn{
+  background: #11998e;
+  background: linear-gradient(120deg,#38ef7d 0%);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+/* ADDED TRASH BUTTON STYLE */
+.trash-btn{
+  background: #ff0000; /* Red color for delete */
+  background: linear-gradient(120deg,#ff4e50 0%,#f9d423 100%); 
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.todo-item{
+  padding: 0rem 0.5rem;
+}
+
+.fa.trash,
+.fa-check{
+  pointer-events: none;
+}
+.fall{
+  transform: translateY(10rem);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.completed{
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/*Custom Selector for Dropdown*/
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+  -ms-progress-appearance: none;
+}
+
+/*Custom React*/
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select{
+  color:aquamarine;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
+/*Arrow*/
+.select::after{
+  content: '\25BC';
+  position: absolute ;
+  top: 0;
+  right: 1rem;
+  padding: 1rem;
+  background: violet;
+  cursor: pointer;  
+  pointer-events: none;
+}
+
+
+/* --- Login Styles --- */
+
+.login-container {
+  /* Center the container in the middle of the screen */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+}
+
+.login-form {
+  /* Style the form itself */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  padding: 3rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 350px; /* Give it a decent size */
+}
+
+.login-form input {
+  /* Make inputs look good and stack */
+  padding: 0.75rem;
+  margin-bottom: 1rem; /* Add vertical space between inputs */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.login-form button {
+  /* Style the button */
+  background: #6a11cb;
+  background: linear-gradient(120deg,#2575fc 0%, #6a11cb 100%);
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.login-form button:hover {
+  /* Adjust hover state for clarity */
+  opacity: 0.9;
+}
+
+.error-message {
+  /* Style the error message */
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: red; /* Ensures the error message is red (moved from inline style) */
+}
